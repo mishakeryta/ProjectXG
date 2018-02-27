@@ -7,6 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button Content="Ok"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row ="0"/>
+        <Grid Grid.Row ="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ListView>
+                <ListView.Resources>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <StackPanel Orientation="Vertical">
+                                    <Image Margin="3" Width="20" Source="{Binding}"/>
+                                    <TextBlock Margin="3" Text="Image"/>
+                                </StackPanel>  
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.Resources>
+            </ListView>
+            <Button Grid.Column="1">
+                Add new pictures
+            </Button>
+
+
+        </Grid>
     </Grid>
 </Window>
