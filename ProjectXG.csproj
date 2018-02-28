@@ -62,9 +62,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="HeaderToImageConverter.cs" />
+    <Compile Include="Image\Data\ImageBackgroundColor.cs" />
     <Compile Include="Image\Data\ImageItem.cs" />
+    <Compile Include="HeaderToBackgroundConverter.cs" />
     <Compile Include="Image\ImageStructure.cs" />
-    <Compile Include="Image\ViewModels\BaseVeiwModels\BaseViewModel.cs" />
     <Compile Include="Image\ViewModels\BaseVeiwModels\CommandHandler.cs" />
     <Compile Include="Image\ViewModels\ImageItemViewModel.cs" />
     <Compile Include="Image\ViewModels\WindowStructureViewModel.cs" />

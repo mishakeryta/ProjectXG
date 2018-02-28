@@ -7,35 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Image Grid.Row ="0"/>
-        <Grid Grid.Row ="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="9*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <ListView ItemsSource="{Binding Items}">
-                <!--= Докінця не знаю що воно робить-->
-                <ListView.Resources>
-                    <Style TargetType="{x:Type ListViewItem}">
-                        <Setter Property="Content">
-                            <Setter.Value>
-                                <StackPanel Orientation="Vertical">
-                                    <Image Margin="3" Width="20" />
-                                    <TextBlock Margin="3" Text="Image"/>
-                                </StackPanel>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ListView.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column ="1"   Source ="{Binding ShownImage  , Converter = {x:Static local:HeaderToImageConverter.Instance}}" />
+        <StackPanel >
+            <Button  Command="{Binding ClickAddCommand }" Content="Add"/>
+            <Button  Command="{Binding ClickUpCommand }" Content="Up"/>
+            <ListView Grid.Row="1"  ItemsSource="{Binding Items}" HorizontalContentAlignment="Center" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="3" Background="{Binding BackgroundColor ,Converter={x:Static local:HeaderToBackgroundConverter.Instance}}">
+                            <StackPanel Orientation="Vertical" CanHorizontallyScroll="False" >
+                                <Image  Margin="3" Width="52.5" Source="{Binding FullPath, Converter = {x:Static local:HeaderToImageConverter.Instance} }" />
+                                <TextBlock Margin="3" Text="{Binding Name}"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
             </ListView>
-            <Button Grid.Column="1" Command="{Binding ClickAddCommand }">
-            </Button>
-
-
-        </Grid>
+            <Button  Command="{Binding ClickDownCommand }" Content="Down"/>
+        </StackPanel>
     </Grid>
 </Window>

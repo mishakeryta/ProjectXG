@@ -21,7 +21,9 @@ namespace ProjectXG
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new WindowStructureVeiwModel();
+          
+            
+            DataContext =  new WindowStructureVeiwModel();
         }
 
        

@@ -17,15 +17,15 @@ namespace ProjectXG
                 return null;
             }
             //normalize path(crossplatform code)
-            fullPath.Replace('\\','/');
-            return fullPath.Substring(fullPath.LastIndexOf('/') + 1);
+            var normalizePath = fullPath.Replace('\\','/');
+            return fullPath.Substring(normalizePath.LastIndexOf('/') + 1);
         }
         // implement dialog thet ask the images paths, і dont know is it true
         static public List<string>  GetImagesPathWhithHelpOfDialog()
         {
             List<string> paths = new List<string>();
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
+            dlg.Multiselect = true;
             // Set filter for file extension and default file extension 
             dlg.DefaultExt = ".png";
             dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";

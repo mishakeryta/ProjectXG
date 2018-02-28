@@ -33,10 +33,27 @@ namespace ProjectXG
 
                 PropertyChanged(this, new PropertyChangedEventArgs(nameof(FullPath)));
             }
-
-
         }
         public string Name { get { return ImageStructure.GetImageName(FullPath); } }
+
+        ImageBackgroundColor mBackgroundColor;
+        public ImageBackgroundColor BackgroundColor
+        {
+            get
+            {
+                return mBackgroundColor;
+            }
+            set
+            {
+                if(value == mBackgroundColor)
+                {
+                    return;
+                }
+                mBackgroundColor = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(BackgroundColor)));
+            }
+        }  
+        
 
 
     }
