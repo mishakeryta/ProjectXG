@@ -17,23 +17,22 @@
                 <ColumnDefinition Width="9*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ListView>
+            <ListView ItemsSource="{Binding Items}">
                 <!--= Докінця не знаю що воно робить-->
                 <ListView.Resources>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Content">
                             <Setter.Value>
                                 <StackPanel Orientation="Vertical">
-                                    <Image Margin="3" Width="20" Source="{Binding}"/>
+                                    <Image Margin="3" Width="20" />
                                     <TextBlock Margin="3" Text="Image"/>
-                                </StackPanel>  
+                                </StackPanel>
                             </Setter.Value>
                         </Setter>
                     </Style>
                 </ListView.Resources>
             </ListView>
-            <Button Grid.Column="1">
-                Add new pictures
+            <Button Grid.Column="1" Command="{Binding ClickAddCommand }">
             </Button>
 
 

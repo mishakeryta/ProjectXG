@@ -1,0 +1,14 @@
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.csprojResolveAssemblyReference.cache
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\App.g.cs
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG_MarkupCompile.cache
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\ProjectXG.exe
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\ProjectXG.pdb
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\MainWindow.g.cs
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG_MarkupCompile.lref
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\MainWindow.baml
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.g.resources
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.Properties.Resources.resources
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.csproj.GenerateResource.Cache
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.csproj.CoreCompileInputs.cache
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.exe
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.pdb
