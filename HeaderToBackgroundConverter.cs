@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Data;
 using System.Windows.Media;
 
+//converter fot brushes
 namespace ProjectXG
 {
     [ValueConversion(typeof(ImageBackgroundColor), typeof(Brushes))]

@@ -11,11 +11,12 @@ namespace ProjectXG
     class WindowStructureVeiwModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
-
+        #region Defoult constructor
         public WindowStructureVeiwModel()
         {
             Items.Add(null);
         }
+        #endregion
 
         #region ObColaction property 
         private ObservableCollection<ImageItemViewModel> mItems = new ObservableCollection<ImageItemViewModel>();
@@ -38,8 +39,8 @@ namespace ProjectXG
         }
         #endregion
 
-
-        //new command with allways can excute
+       
+        #region Commands fot buttons add methods for them
         private ICommand mClickAddCommand;
         public ICommand ClickAddCommand
         {
@@ -79,7 +80,6 @@ namespace ProjectXG
                 if (Items[0] == null)
                 {
                     Items.Clear();
-                    IndexItemShown = 0;
                 }
                 Items.Add(image);
             }
@@ -99,15 +99,18 @@ namespace ProjectXG
         public void Down()
         {
 
-            if (Items.Count < IndexItemShown || Items[0] == null)
-                return;
-            Items[IndexItemShown].BackgroundColor = ImageBackgroundColor.White;
-            ++IndexItemShown;
-            Items[IndexItemShown].BackgroundColor = ImageBackgroundColor.Blue;
-
+            if (Items.Count-1 > mIndexItemShown && Items[0] != null)
+            {
+                if(mIndexItemShown>=0)Items[IndexItemShown].BackgroundColor = ImageBackgroundColor.White;
+                ++IndexItemShown;
+                Items[IndexItemShown].BackgroundColor = ImageBackgroundColor.Blue;
+            }
         }
+        #endregion
 
-        int mIndexItemShown = 0;
+        #region Main image propertyse 
+        
+        int mIndexItemShown = -1;
         public int IndexItemShown
         {
             get
@@ -138,7 +141,7 @@ namespace ProjectXG
                 }
             }
         }
-
+#endregion
 
 
 

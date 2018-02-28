@@ -6,13 +6,17 @@ namespace ProjectXG
 {
     class ImageItemViewModel : INotifyPropertyChanged
     {
+        //realizetion of interface
+        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
+        #region Constructor
         public ImageItemViewModel(string fullPath)
         {
             this.FullPath = fullPath;
         }
+        #endregion
 
-        //realizetion of interface
-        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
+
+        #region Path and name property
         //private mamber,full path to image
         private string mFullPath;
         public string FullPath
@@ -35,7 +39,9 @@ namespace ProjectXG
             }
         }
         public string Name { get { return ImageStructure.GetImageName(FullPath); } }
+        #endregion
 
+        #region Color property for border
         ImageBackgroundColor mBackgroundColor;
         public ImageBackgroundColor BackgroundColor
         {
@@ -52,9 +58,8 @@ namespace ProjectXG
                 mBackgroundColor = value;
                 PropertyChanged(this, new PropertyChangedEventArgs(nameof(BackgroundColor)));
             }
-        }  
-        
-
+        }
+#endregion
 
     }
 }

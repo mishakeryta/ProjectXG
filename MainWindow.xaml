@@ -12,7 +12,7 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         <Image Grid.Column ="1"   Source ="{Binding ShownImage  , Converter = {x:Static local:HeaderToImageConverter.Instance}}" />
-        <StackPanel >
+        <StackPanel Width=  >
             <Button  Command="{Binding ClickAddCommand }" Content="Add"/>
             <Button  Command="{Binding ClickUpCommand }" Content="Up"/>
             <ListView Grid.Row="1"  ItemsSource="{Binding Items}" HorizontalContentAlignment="Center" >
