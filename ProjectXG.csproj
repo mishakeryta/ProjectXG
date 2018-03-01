@@ -63,7 +63,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="HeaderToImageConverter.cs" />
-    <Compile Include="Image\Data\ImageBackgroundColor.cs" />
+    <Compile Include="Image\ViewModels\ImageBackgroundColor.cs" />
     <Compile Include="Image\Data\ImageItem.cs" />
     <Compile Include="HeaderToBackgroundConverter.cs" />
     <Compile Include="Image\ImageStructure.cs" />

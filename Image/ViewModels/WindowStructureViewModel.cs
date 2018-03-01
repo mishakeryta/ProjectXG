@@ -142,8 +142,5 @@ namespace ProjectXG
             }
         }
 #endregion
-
-
-
     }
 }

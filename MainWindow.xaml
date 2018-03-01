@@ -12,10 +12,17 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         <Image Grid.Column ="1"   Source ="{Binding ShownImage  , Converter = {x:Static local:HeaderToImageConverter.Instance}}" />
-        <StackPanel Width=  >
-            <Button  Command="{Binding ClickAddCommand }" Content="Add"/>
-            <Button  Command="{Binding ClickUpCommand }" Content="Up"/>
-            <ListView Grid.Row="1"  ItemsSource="{Binding Items}" HorizontalContentAlignment="Center" >
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <Button Grid.Row="0" Command="{Binding ClickAddCommand }" Content="Add"/>
+                <Button Grid.Row="0" Command="{Binding ClickUpCommand }" Content="Up"/>
+            </StackPanel>
+            <ListView Grid.Row="1"  ItemsSource="{Binding Items}" HorizontalContentAlignment="Center" BorderThickness="1" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border Margin="3" Background="{Binding BackgroundColor ,Converter={x:Static local:HeaderToBackgroundConverter.Instance}}">
@@ -28,7 +35,7 @@
                 </ListView.ItemTemplate>
 
             </ListView>
-            <Button  Command="{Binding ClickDownCommand }" Content="Down"/>
-        </StackPanel>
+            <Button Grid.Row="2"  Command="{Binding ClickDownCommand }" Content="Down"/>
+        </Grid>
     </Grid>
 </Window>
