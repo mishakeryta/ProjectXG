@@ -66,6 +66,17 @@ namespace ProjectXG
                 return mClickDownCommand ?? (mClickDownCommand = new CommandHandler(() => Down(), true));
             }
         }
+        /*
+         // it may be comand to select image.
+         public ICommand mClickImageCommand;
+        public ICommand ClickImageCommand
+        {
+            get
+            {
+                return mClickImageCommand ?? (mClickDownCommand = new CommandHandler(() => Down(), true));
+            }
+        }*/
+
 
         public void Add()
         {
