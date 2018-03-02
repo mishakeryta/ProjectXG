@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectXG"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" MinHeight="350" MinWidth="525">
     <Grid>
-        <Button Content="Ok" Margin="209,127,227,135"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MaxWidth="110" MinWidth="60"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column ="1"   Source ="{Binding ShownImage  , Converter = {x:Static local:HeaderToImageConverter.Instance}}" />
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel MinWidth="60" MaxWidth="110" >
+                <Button Grid.Row="0" Command="{Binding ClickAddCommand }" Content="Add"/>
+                <Button Grid.Row="0" Command="{Binding ClickUpCommand }" Content="Up"/>
+            </StackPanel>
+            <ListView Grid.Row="1"  ItemsSource="{Binding Items}" HorizontalContentAlignment="Center" BorderThickness="1"
+                    MinWidth="60" MaxWidth="110" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="3" Background="{Binding BackgroundColor ,Converter={x:Static local:HeaderToBackgroundConverter.Instance}}">
+                            <StackPanel Orientation="Vertical" CanHorizontallyScroll="False">
+                                <Image  MinWidth="50" MaxWidth="100" Margin="3" Source="{Binding FullPath,
+                                    Converter = {x:Static local:HeaderToImageConverter.Instance}}"/>
+                                <TextBlock  MinWidth="50" MaxWidth="100"  Text="{Binding Name}" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            <Button Grid.Row="2"  Command="{Binding ClickDownCommand }" Content="Down"/>
+        </Grid>
     </Grid>
 </Window>
