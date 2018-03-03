@@ -11,26 +11,44 @@
             <ColumnDefinition Width="*" MaxWidth="110" MinWidth="60"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Name="rdImageField" Height="*"/>
+                <RowDefinition  Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            
-            <Image Grid.Row="0"  Margin="10" Source ="{Binding Path=SelectedImage.FullPath,
-            Converter = {x:Static local:HeaderToImageConverter.Instance}}" >
-                <Image.RenderTransform>
-                    <ScaleTransform  ScaleX="{Binding ElementName=slSize, Path=Value}" 
-                                     ScaleY="{Binding ElementName=sbSize, Path=Value}" />
-                </Image.RenderTransform>
-            </Image>
-<!--<ScrollBar Name="sbSize" Grid.Row="1" Minimum="0.5" Maximum="4" Orientation="Horizontal" Value="2"/>-->
-            <Slider  Name="slSize" Grid.Row="1" Minimum="0.5" Maximum="4" Orientation="Horizontal" Value="2"/>
 
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width ="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border  Margin="3" >
+                    <Image Name="iMain" Grid.Row="0"  Margin="10" Source ="{Binding Path=SelectedImage.FullPath,
+                        Converter = {x:Static local:HeaderToImageConverter.Instance}}" >
+                        <Image.RenderTransform>
+                            <ScaleTransform  ScaleX="{Binding ElementName=slSize, Path=Value}" 
+                                         ScaleY="{Binding ElementName=slSize, Path=Value}"
+                                         CenterX="{Binding ElementName=sbHorizontalCenter, Path=Value,Mode=OneWay}"
+                                         CenterY="{Binding ElementName=sbVerticalCenter, Path=Value,Mode=OneWay}"/>
+                        </Image.RenderTransform>
+
+                    </Image>
+                </Border>
+                <ScrollBar Name="sbVerticalCenter" Grid.Column="1" Minimum="0.5" 
+                           Maximum="900" 
+                           Orientation="Vertical" Value="0"/>
+            </Grid>
+            <StackPanel Grid.Row="1">
+                <ScrollBar Name="sbHorizontalCenter" Grid.Row="1" Minimum="0" 
+                       Maximum="900" 
+                       Orientation="Horizontal" Value="0"/>
+
+                <Slider  Name="slSize" Grid.Row="1" Minimum="0.5" Maximum="4" Orientation="Horizontal" Value="2"/>
+            </StackPanel>
         </Grid>
-        
-        
+
+
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
