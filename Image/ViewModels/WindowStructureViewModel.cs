@@ -39,7 +39,7 @@ namespace ProjectXG
         }
         #endregion
 
-       
+
         #region Commands fot buttons add methods for them
         private ICommand mClickAddCommand;
         public ICommand ClickAddCommand
@@ -66,18 +66,6 @@ namespace ProjectXG
                 return mClickDownCommand ?? (mClickDownCommand = new CommandHandler(() => Down(), true));
             }
         }
-        /*
-         // it may be comand to select image.
-         public ICommand mClickImageCommand;
-        public ICommand ClickImageCommand
-        {
-            get
-            {
-                return mClickImageCommand ?? (mClickDownCommand = new CommandHandler(() => Down(), true));
-            }
-        }*/
-
-
         public void Add()
         {
             List<string> newImagesPaths = ImageStructure.GetImagesPathWhithHelpOfDialog();
@@ -97,61 +85,42 @@ namespace ProjectXG
         }
         public void Up()
         {
-            if (0 >= IndexItemShown || Items[0] == null)
-                return;
-            Items[IndexItemShown].BackgroundColor = ImageBackgroundColor.White;
-            --IndexItemShown;
-            Items[IndexItemShown].BackgroundColor = ImageBackgroundColor.Blue;
-
-
+            if (mSelectedImage == null) return;
+            int selectedIndex = Items.IndexOf(mSelectedImage);
+            if (selectedIndex <= 0) return;
+            SelectedImage = Items[selectedIndex - 1];
 
         }
 
         public void Down()
         {
+            if (mSelectedImage == null) return;
+            int selectedIndex = Items.IndexOf(mSelectedImage);
+            if (selectedIndex >= (Items.Count - 1)) return;
+            SelectedImage = Items[selectedIndex + 1];
 
-            if (Items.Count-1 > mIndexItemShown && Items[0] != null)
-            {
-                if(mIndexItemShown>=0)Items[IndexItemShown].BackgroundColor = ImageBackgroundColor.White;
-                ++IndexItemShown;
-                Items[IndexItemShown].BackgroundColor = ImageBackgroundColor.Blue;
-            }
         }
         #endregion
 
-        #region Main image propertyse 
-        
-        int mIndexItemShown = -1;
-        public int IndexItemShown
+        #region Main image propertyseI
+        ImageItemViewModel mSelectedImage = null;
+        public ImageItemViewModel SelectedImage
         {
             get
             {
-                return mIndexItemShown;
+                return mSelectedImage;
             }
             set
             {
-                if (mIndexItemShown == value)
+                if (mSelectedImage == value)
                 {
                     return;
                 }
-                mIndexItemShown = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(ShownImage)));
+                mSelectedImage = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(SelectedImage)));
             }
         }
-        public string ShownImage
-        {
-            get
-            {
-                if (Items.Count > IndexItemShown)
-                {
-                    return Items[IndexItemShown].FullPath;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-        }
-#endregion
+
+        #endregion
     }
 }

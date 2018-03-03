@@ -8,11 +8,12 @@ namespace ProjectXG
     {
         //realizetion of interface
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
-        #region Constructor
+        #region Constructors
         public ImageItemViewModel(string fullPath)
         {
             this.FullPath = fullPath;
         }
+        public ImageItemViewModel() { }
         #endregion
 
 

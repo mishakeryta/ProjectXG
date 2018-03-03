@@ -11,8 +11,9 @@
             <ColumnDefinition Width="*" MaxWidth="110" MinWidth="60"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column ="1"  Margin="10" Source ="{Binding ShownImage  , Converter = {x:Static local:HeaderToImageConverter.Instance}}" />
-        
+        <Image Grid.Column ="1"  Margin="10" Source ="{Binding Path=SelectedImage.FullPath,
+            Converter = {x:Static local:HeaderToImageConverter.Instance}}" />
+
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -24,17 +25,23 @@
                 <Button Grid.Row="0" Command="{Binding ClickAddCommand }" Content="Add"/>
                 <Button Grid.Row="0" Command="{Binding ClickUpCommand }" Content="Up"/>
             </StackPanel>
-            <ListView Grid.Row="1"  ItemsSource="{Binding Items}" HorizontalContentAlignment="Center" BorderThickness="1"
-                    MinWidth="60" MaxWidth="110" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Border Margin="3" Background="{Binding BackgroundColor ,Converter={x:Static local:HeaderToBackgroundConverter.Instance}}">
-                            <StackPanel Orientation="Vertical" CanHorizontallyScroll="False">
-                                <Image Margin="3"  MinWidth="50" MaxWidth="100" Source="{Binding FullPath,
+            <ListView Grid.Row="1"  ItemsSource="{Binding Items}" 
+                      SelectedItem="{Binding Path=SelectedImage, Mode=TwoWay}" 
+                HorizontalContentAlignment="Center" BorderThickness="1"
+                    MinWidth="60" MaxWidth="110" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      SelectionMode="Single"  >
+         
+                    <ListView.ItemTemplate>
+               
+                <DataTemplate>
+                         
+                        <StackPanel Orientation="Vertical" CanHorizontallyScroll="False">
+                            <Image  Margin="3"  MinWidth="50" MaxWidth="100" Source="{Binding FullPath,
                                     Converter = {x:Static local:HeaderToImageConverter.Instance}}"/>
-                                <TextBlock  MinWidth="50" MaxWidth="100"  Text="{Binding Name}" TextWrapping="Wrap"/>
-                            </StackPanel>
-                        </Border>
+                            
+                            <TextBlock  MinWidth="50" MaxWidth="100"  Text="{Binding Name}" TextWrapping="Wrap"/>
+                        </StackPanel>
+
                     </DataTemplate>
                 </ListView.ItemTemplate>
 
