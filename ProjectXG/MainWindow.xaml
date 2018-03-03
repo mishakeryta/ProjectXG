@@ -11,9 +11,26 @@
             <ColumnDefinition Width="*" MaxWidth="110" MinWidth="60"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column ="1"  Margin="10" Source ="{Binding Path=SelectedImage.FullPath,
-            Converter = {x:Static local:HeaderToImageConverter.Instance}}" />
+        
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Name="rdImageField" Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            
+            <Image Grid.Row="0"  Margin="10" Source ="{Binding Path=SelectedImage.FullPath,
+            Converter = {x:Static local:HeaderToImageConverter.Instance}}" >
+                <Image.RenderTransform>
+                    <ScaleTransform  ScaleX="{Binding ElementName=slSize, Path=Value}" 
+                                     ScaleY="{Binding ElementName=sbSize, Path=Value}" />
+                </Image.RenderTransform>
+            </Image>
+<!--<ScrollBar Name="sbSize" Grid.Row="1" Minimum="0.5" Maximum="4" Orientation="Horizontal" Value="2"/>-->
+            <Slider  Name="slSize" Grid.Row="1" Minimum="0.5" Maximum="4" Orientation="Horizontal" Value="2"/>
 
+        </Grid>
+        
+        
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -30,15 +47,15 @@
                 HorizontalContentAlignment="Center" BorderThickness="1"
                     MinWidth="60" MaxWidth="110" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                       SelectionMode="Single"  >
-         
-                    <ListView.ItemTemplate>
-               
-                <DataTemplate>
-                         
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
                         <StackPanel Orientation="Vertical" CanHorizontallyScroll="False">
                             <Image  Margin="3"  MinWidth="50" MaxWidth="100" Source="{Binding FullPath,
                                     Converter = {x:Static local:HeaderToImageConverter.Instance}}"/>
-                            
+
                             <TextBlock  MinWidth="50" MaxWidth="100"  Text="{Binding Name}" TextWrapping="Wrap"/>
                         </StackPanel>
 
