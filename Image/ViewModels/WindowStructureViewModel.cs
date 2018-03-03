@@ -122,5 +122,40 @@ namespace ProjectXG
         }
 
         #endregion
+        #region Mouse on picture commande, size up
+        MouseCordinateViewModel mMouse = new MouseCordinateViewModel();
+        public MouseCordinateViewModel Mouse
+        {
+            get
+            {
+                return mMouse;
+            }
+            set
+            {
+                if(mMouse == value)
+                {
+                    return;
+                }
+                mMouse = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(Mouse)));
+            }
+        }
+
+        private ICommand mMouseLeftButtonDownSizeUp;
+        public ICommand MouseLeftButtonDownSizeUp
+        {
+            get
+            {
+                //operato ?? return left if value is not null else...
+                return mMouseLeftButtonDownSizeUp ?? (mMouseLeftButtonDownSizeUp = new CommandHandler(() => Add(), true));
+            }
+        }
+        #endregion
+        void SizeUp()
+        {
+
+        }
+
     }
+   
 }

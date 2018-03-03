@@ -12,3 +12,16 @@ C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.csproj.Ge
 C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.csproj.CoreCompileInputs.cache
 C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.exe
 C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\ProjectXG.pdb
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\ProjectXG.exe.config
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\CommonServiceLocator.dll
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\GalaSoft.MvvmLight.dll
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\System.Windows.Interactivity.dll
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\GalaSoft.MvvmLight.xml
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\study\StudyByMySelf\Git_Hub\ProjectXG\ProjectXG\obj\Debug\GeneratedInternalTypeHelper.g.cs
