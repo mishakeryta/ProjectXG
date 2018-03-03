@@ -102,7 +102,7 @@ namespace ProjectXG
         }
         #endregion
 
-        #region Main image propertyseI
+        #region Main image propertyse
         ImageItemViewModel mSelectedImage = null;
         public ImageItemViewModel SelectedImage
         {
