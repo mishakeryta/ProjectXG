@@ -25,3 +25,5 @@ E:\Programming\ProjectXG\obj\Debug\MainWindow.baml
 E:\Programming\ProjectXG\obj\Debug\ProjectXG.g.resources
 E:\Programming\ProjectXG\obj\Debug\ProjectXG.Properties.Resources.resources
 E:\Programming\ProjectXG\obj\Debug\ProjectXG.csproj.GenerateResource.Cache
+E:\Programming\ProjectXG\Some\obj\Debug\ProjectXG.exe
+E:\Programming\ProjectXG\Some\obj\Debug\ProjectXG.pdb
