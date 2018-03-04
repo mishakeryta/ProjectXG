@@ -11,7 +11,7 @@
             <ColumnDefinition Width="*" MaxWidth="110" MinWidth="60"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column ="1"     Source ="{Binding ShownImage  , Converter = {x:Static local:HeaderToImageConverter.Instance}}" />
+        <Image Grid.Column ="1" Source ="{Binding ShownImage  , Converter = {x:Static local:HeaderToImageConverter.Instance}}" />
 
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
